@@ -1,0 +1,115 @@
+﻿@model GroupFinderCapstone.Models.Event
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Game</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.HostID)
+<div class="form-horizontal">
+    <h4>Define your Event</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <!--this is the format for html comments and labels -->  @*testing different type of commen, razr format *@
+        <label for="StartDate" class="control-label col-md-2">Start Date</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        
+        <label for="EndDate" class="control-label col-md-2">End Date</label>
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Duration, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Duration, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Duration, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        
+        <label for="EventTime" class="control-label col-md-2">Time of Day</label>
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EventTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EventTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        
+        <label for="MinimumPlayerCount" class="control-label col-md-2">Minimum Player Count</label>
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MinimumPlayerCount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MinimumPlayerCount, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        
+        <label for="MaximumPlayerCount" class="control-label col-md-2">Maximum Player Count</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaxPlayerCount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaxPlayerCount, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        
+        <label for="GameType" class="control-label col-md-2">Ruleset</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GameType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GameType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IsHidden, new { htmlAttributes = new { @class = "form-control" } })
+            <label for="IsHidden" class="control-label col-md-2">Private Game</label>
+            @Html.ValidationMessageFor(model => model.IsHidden, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNet.Identity;
+@model IEnumerable<GroupFinderCapstone.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Games List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            End Date
+        </th>
+        <th>
+            Length of game in hours
+        </th>
+        <th>
+            Time of Day
+        </th>
+        <th>
+            Minimum Number of Players
+        </th>
+        <th>
+            Maximum Number of Players
+        </th>
+        <th>
+            Ruleset
+        </th>
+        <th>
+            Active GM/DM
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            <span class="evtDateTime">
+            @{ 
+                var EventDateTime = DateTime.Today + item.EventTime;
+            }
+            @EventDateTime.ToString("hh:mm tt")</span>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinimumPlayerCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxPlayerCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GM.Username)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.EventID }) 
+            @if(User.Identity.GetUserId() == item.HostID)
+             { <text>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
+             </text>}
+        </td>
+    </tr>
+}
+
+</table>

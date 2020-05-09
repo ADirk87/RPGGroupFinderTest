@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNet.Identity;
+@model IEnumerable<GroupFinderCapstone.Models.EventComment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new {id = ViewBag.EventID})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Player.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.CommentTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommentTime)
+        </td>
+        
+        <td>
+            @if (User.Identity.GetUserId() == item.PlayerID || User.Identity.GetUserId() == item.Event.HostID)
+            {
+            @Html.ActionLink("Delete", "Delete", new { id = item.EventCommentID }) 
+            }
+        </td>
+    </tr>
+}
+
+</table>

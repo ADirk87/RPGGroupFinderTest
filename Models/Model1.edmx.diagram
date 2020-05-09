@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b82a1dd17e0d40b6acd0bc9ea9e48afe" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="RPGGroupFinderModel.GM" Width="1.5" PointX="9.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGGroupFinderModel.GMRating" Width="1.5" PointX="11.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGGroupFinderModel.Player" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGGroupFinderModel.PlayerRating" Width="1.5" PointX="2.375" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGGroupFinderModel.PlayerSignup" Width="1.5" PointX="6.125" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__GMRating__GMID__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__PlayerRati__GMID__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__GMRating__Player__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__PlayerRat__Playe__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__PlayerSig__Playe__38996AB5" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RPGGroupFinderModel.Event" Width="1.5" PointX="5.875" PointY="5.375" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__Event__HostID__31EC6D26" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__PlayerSig__Event__398D8EEE" />
+        <EntityTypeShape EntityType="RPGGroupFinderModel.EventComment" Width="1.5" PointX="6.625" PointY="10" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__EventComm__Event__34C8D9D1" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__EventComm__Playe__35BCFE0A" />
+        <AssociationConnector Association="RPGGroupFinderModel.FK__EventComme__GMID__5AEE82B9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

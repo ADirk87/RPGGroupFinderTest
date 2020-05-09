@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Intensify by TEMPLATED
+    templated.co     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>RPGGroupFinder</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/Content/font-awesome.min.css"/>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="left">
+            <a href="#menu"><span>Menu</span></a>
+        </nav>
+        <a href="index.html" class="logo">RPGGroupFinder</a>
+        <nav class="right">
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li>@Html.ActionLink("Home","Index","Home")</li>
+            <li>@Html.ActionLink("Contact","Contact","Home")</li>
+            <li>@Html.ActionLink("Events", "Index","Events")</li>
+            @Html.Partial("_LoginPartial")
+        </ul>
+        <ul class="actions vertical">
+            <li><a href="#" class="button fit">Login</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <header class="align-center">
+                <h1>Create your game</h1>
+                <p><b><em>Ready to go? Use the hotbar at the top-left to register and start gathering your ideal group</b></em></p>
+            </header>
+            @RenderBody()
+            <div>
+                <span class="image left"><img src="~/images/pic06.jpg" alt="" />
+            </div>
+            <!-- Content -->
+            <h2 id="content"></h2>
+
+
+
+            <div class="row">
+
+                <!-- Break -->
+                <div class="4u 12u$(medium)">
+                    <h3>Fine tune your group</h3>
+                    <p>Does your game feature mature content? Political intrigue? Hack n' Slash dicefest? Let your prospective players know ahead of time!</p>
+                </div>
+                <div class="4u 12u$(medium)">
+                    <h3>Rate your GMs, and Players</h3>
+                    <p>Your reviews and opinions matter! We allow for rating your games, and subsequently, also GMs rating players!</p>
+                </div>
+                <div class="4u$ 12u$(medium)">
+                    <h3>Any game, any format, any time</h3>
+                    <p>If it's live action, tabletop, or virtual tabletop, we have you covered</p>
+                </div>
+            </div>
+            <div>
+                <span class="image fit">
+                    <img src="~/images/pic07.jpg" alt="" />
+            </div>
+            <hr class="major" />
+
+           
+            <!-- Text stuff -->
+            
+
+                    <h4>Social Media</h4>
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+                                             
+                    </ul>
+
+                </div>
+            </div>
+            
+
+            
+
+            <!-- Blockquote -->
+            <h3>What are you waiting for? Join today!</h3>
+            <blockquote>Fortune favors the bold! Your group is out there!</blockquote>
+
+            
+                        
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <h2>Contact Me</h2>
+            <ul class="actions">
+                <li><span class="icon fa-phone"></span> <a href="#">(618) 623-3244</a></li>
+                <li><span class="icon fa-envelope"></span> <a href="#">RPGGroupFinder@gmail.com</a></li>
+                <li><span class="icon fa-map-marker"></span> 123 Dirkers Drive, St.Louis, MO 63146</li>
+            </ul>
+        </div>
+        <div class="copyright">
+            &copy; Dirkers Design <a href="https://templated.co">TEMPLATED</a>. Images <a href="https://unsplash.com">Unsplash</a>.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.scrolly.min.js"></script>
+    <script src="~/Scripts/skel.min.js"></script>
+    <script src="~/Scripts/util.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    @RenderSection("scripts", required : false)
+</body>
+</html>

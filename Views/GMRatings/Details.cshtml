@@ -1,0 +1,58 @@
+﻿@model GroupFinderCapstone.Models.GMRating
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GMRating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GM.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GM.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Player.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Player.Username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RatingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

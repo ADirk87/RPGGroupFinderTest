@@ -1,0 +1,116 @@
+﻿@using Microsoft.AspNet.Identity;
+@model GroupFinderCapstone.Models.Event
+
+@{
+    var UserID = User.Identity.GetUserId();
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumPlayerCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumPlayerCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxPlayerCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxPlayerCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GM.Username)
+        </dt>
+
+        <dd>
+            @Html.ActionLink(Model.GM.Username, "Details", "GMs", new { id = Model.HostID}, null)
+
+            @if (Model.GM.AverageRating.HasValue)
+            {
+                for (int i = 1; i < 6; i++)
+                {
+                    var StarClass = "fa fa-star";
+                    if(Model.GM.AverageRating >= i)
+                    {
+                        StarClass += " checked";
+                    }
+            <span class="@StarClass"></span>
+                }
+                @Model.GM.AverageRating.Value.ToString("0.00")
+            }
+            @if (Model.PlayerSignups.Any(s => s.PlayerID==UserID && s.IsApproved) && !Model.GM.GMRatings.Any( r => r.PlayerID == UserID))
+            {
+                @Html.ActionLink("Leave a Rating", "Create", "GMRatings", new {  id = Model.HostID}, null)
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div class="SignupsContainer">
+    @Html.Action("Index", "PlayerSignups", new { id = Model.EventID })
+</div>
+<div class="CommentContainer">
+    @Html.Action("Index", "EventComments", new { id = Model.EventID})
+</div>

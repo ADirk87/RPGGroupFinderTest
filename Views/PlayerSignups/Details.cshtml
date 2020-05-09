@@ -1,0 +1,58 @@
+﻿@model GroupFinderCapstone.Models.PlayerSignup
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlayerSignup</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsApproved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentGM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentGM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentPlayer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentPlayer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.HostID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event.HostID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Player.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Player.Username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SignupID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNet.Identity;
+@model GroupFinderCapstone.Models.GM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreferredMedium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreferredMedium)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bio)
+        </dd>
+
+        
+
+        
+
+    </dl>
+    @Html.Action("Index", "GMRatings", new { id = Model.GMID})
+</div>
+<p>@*TODO:remember to move edit to an if statement*@
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GMID }) |
+    @Html.ActionLink("Back to Events", "Index", "Events")
+</p>
